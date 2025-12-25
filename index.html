@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>电工倒班管理系统</title>
+    <title>电工倒班管理系统（支持周轮换）</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -38,6 +38,16 @@
             padding: 10px;
             border-radius: 10px;
             margin: 15px 0;
+        }
+        .week-info {
+            font-size: 16px;
+            color: #fff;
+            background: #e91e63;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
         }
         .time-slots {
             display: flex;
@@ -167,8 +177,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>⚡ 电工倒班管理系统</h1>
-            <div class="date-info" id="dateTime">2025年12月17日 星期三<br><span id="currentTime">10:14:36</span></div>
+            <h1>⚡ 电工倒班管理系统（支持周轮换）</h1>
+            <div class="date-info" id="dateTime">2025年12月25日 星期四<br><span id="currentTime">10:14:36</span></div>
+            <div class="week-info" id="weekInfo">第52周 | 当前班组轮换周期</div>
         </div>
         
         <div class="time-slots">
@@ -220,7 +231,7 @@
         </div>
         
         <div class="footer-info">
-            ⏰ 系统实时更新 | 最后更新: <span id="lastUpdate">10:14:36</span>
+            ⏰ 系统实时更新 | 最后更新: <span id="lastUpdate">10:14:36</span> | 下次轮换: <span id="nextRotation">2026年1月1日 (周一)</span>
         </div>
     </div>
 
@@ -231,6 +242,13 @@
             { team: "丙班", name: "张有川", phone: "15987296857", avatar: "张" },
             { team: "甲班", name: "朱森发", phone: "13737242404", avatar: "朱" }
         ];
+
+        // 班次时间配置
+        const shiftTimes = {
+            morning: { name: "早班", start: 8, end: 16, color: "#4CAF50" },
+            middle: { name: "中班", start: 16, end: 24, color: "#2196F3" },
+            night: { name: "夜班", start: 0, end: 8, color: "#FF9800" }
+        };
 
         // 格式化电话
         function formatPhone(phone) {
@@ -248,12 +266,30 @@
             return phone;
         }
 
+        // 获取当前周数（ISO周数）
+        function getWeekNumber(date) {
+            const d = new Date(date);
+            d.setHours(0, 0, 0, 0);
+            d.setDate(d.getDate() + 4 - (d.getDay() || 7));
+            const yearStart = new Date(d.getFullYear(), 0, 1);
+            const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+            return weekNo;
+        }
+
+        // 根据周数确定当前轮换班组
+        function getCurrentRotation(weekNumber) {
+            // 使用周数模3来确定当前是哪个班组
+            return weekNumber % 3;
+        }
+
         // 更新显示
         function updateDisplay() {
             const now = new Date();
             const currentHour = now.getHours();
             const currentMinute = now.getMinutes();
             const currentSecond = now.getSeconds();
+            const weekNumber = getWeekNumber(now);
+            const rotationIndex = getCurrentRotation(weekNumber);
             
             // 更新时间显示
             const dateStr = now.toLocaleDateString('zh-CN', { 
@@ -270,27 +306,31 @@
                 <span id="currentTime" style="font-size: 20px; font-weight: bold;">${timeStr}</span>
             `;
             
+            // 更新周信息
+            document.getElementById('weekInfo').textContent = `第${weekNumber}周 | 当前主导班组: ${electricians[rotationIndex].team}`;
+            
             // 根据时间确定当前班次
             let currentShiftName, currentIndex, nextShiftName, nextIndex;
             
             if (currentHour >= 8 && currentHour < 16) {
                 // 当前是早班 (8:00-16:00)
                 currentShiftName = "早班";
-                currentIndex = 0; // 连二宁
+                currentIndex = rotationIndex; // 当前周主导班组上早班
                 nextShiftName = "中班";
-                nextIndex = 1; // 张有川
-            } else if (currentHour >= 16 && currentHour < 24) {
-                // 当前是中班 (16:00-24:00)
-                currentShiftName = "中班";
-                currentIndex = 1; // 张有川
-                nextShiftName = "夜班";
-                nextIndex = 2; // 朱森发
-            } else {
-                // 当前是夜班 (0:00-8:00)
-                currentShiftName = "夜班";
-                currentIndex = 2; // 朱森发
-                nextShiftName = "早班";
-                nextIndex = 0; // 连二宁
+                nextIndex = (rotationIndex + 1) % 3; // 下一个班组上中班
+            } else if (currentHour >= 16 || currentHour < 0) {
+                // 当前是中班 (16:00-24:00) 或夜班 (0:00-8:00)
+                if (currentHour >= 16 && currentHour < 24) {
+                    currentShiftName = "中班";
+                    currentIndex = (rotationIndex + 1) % 3; // 下一个班组上中班
+                    nextShiftName = "夜班";
+                    nextIndex = (rotationIndex + 2) % 3; // 第三个班组上夜班
+                } else {
+                    currentShiftName = "夜班";
+                    currentIndex = (rotationIndex + 2) % 3; // 第三个班组上夜班
+                    nextShiftName = "早班";
+                    nextIndex = rotationIndex; // 当前周主导班组上早班
+                }
             }
             
             // 更新当前班次信息
@@ -374,8 +414,22 @@
                 nextShiftTime.textContent = "接班时间: 8:00开始";
             }
             
-            // 更新最后刷新时间
+            // 计算下次轮换时间（下周一）
+            const nextMonday = new Date(now);
+            const daysUntilMonday = (1 + 7 - now.getDay()) % 7;
+            nextMonday.setDate(now.getDate() + (daysUntilMonday === 0 ? 7 : daysUntilMonday));
+            nextMonday.setHours(0, 0, 0, 0);
+            
+            const nextRotationStr = nextMonday.toLocaleDateString('zh-CN', { 
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                weekday: 'long'
+            });
+            
+            // 更新最后刷新时间和下次轮换时间
             document.getElementById('lastUpdate').textContent = timeStr;
+            document.getElementById('nextRotation').textContent = nextRotationStr;
         }
 
         // 页面加载时初始化
