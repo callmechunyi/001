@@ -17,7 +17,7 @@
             min-height: 100vh;
             padding: 12px;
             color: #333;
-            font-size: 13px; /* ✅ 整体字体缩小 */
+            font-size: 13px;
         }
         
         .container {
@@ -62,22 +62,27 @@
             text-align: center;
             font-weight: bold;
         }
-        
+
+        /* ✅ 班次时间：一行显示 */
         .time-slots {
             display: flex;
-            justify-content: space-around;
-            margin: 12px 0;
-            gap: 6px;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            gap: 8px;
+            flex-wrap: wrap;
         }
-        
+
         .time-slot {
-            flex: 1;
-            padding: 6px;
-            border-radius: 8px;
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 20px;
             color: white;
             font-weight: bold;
             font-size: 12px;
+            white-space: nowrap;
         }
         
         .morning-slot {
@@ -232,12 +237,16 @@
         .day-shift-name {
             font-weight: bold;
             color: #333;
+            margin-bottom: 4px;
         }
 
         .day-shift-phone {
             color: #1976d2;
             text-decoration: none;
             font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .day-shift-phone:hover {
@@ -250,7 +259,7 @@
             }
             
             .time-slots {
-                flex-direction: column;
+                flex-wrap: wrap;
             }
 
             .day-shift-list {
@@ -267,6 +276,7 @@
             <div class="week-info" id="weekInfo">第4周 | 当前主导班组: 甲班</div>
         </div>
         
+        <!-- ✅ 班次时间：一行显示 -->
         <div class="time-slots">
             <div class="time-slot morning-slot">早班 8:00-16:00</div>
             <div class="time-slot middle-slot">中班 16:00-24:00</div>
@@ -315,33 +325,45 @@
             </div>
         </div>
 
-        <!-- ✅ 长白班各区域联系人（常驻） -->
+        <!-- ✅ 长白班各区域联系人 -->
         <div class="day-shift-section">
             <div class="day-shift-title">📋 长白班各区域联系人（常驻）</div>
             <div class="day-shift-list">
                 <div class="day-shift-item">
                     <div class="day-shift-name">转炉 - 李佳桀</div>
-                    <a class="day-shift-phone" href="tel:18077097795">180-7709-7795</a>
+                    <a class="day-shift-phone" href="tel:18077097795">
+                        📞 联系 180-7709-7795
+                    </a>
                 </div>
                 <div class="day-shift-item">
                     <div class="day-shift-name">连铸 - 曾元峰</div>
-                    <a class="day-shift-phone" href="tel:13317703415">133-1770-3415</a>
+                    <a class="day-shift-phone" href="tel:13317703415">
+                        📞 联系 133-1770-3415
+                    </a>
                 </div>
                 <div class="day-shift-item">
                     <div class="day-shift-name">行车 - 黄琪超</div>
-                    <a class="day-shift-phone" href="tel:19907704304">199-0770-4304</a>
+                    <a class="day-shift-phone" href="tel:19907704304">
+                        📞 联系 199-0770-4304
+                    </a>
                 </div>
                 <div class="day-shift-item">
                     <div class="day-shift-name">运转 - 巫绍伟</div>
-                    <a class="day-shift-phone" href="tel:18154703516">181-5470-3516</a>
+                    <a class="day-shift-phone" href="tel:18154703516">
+                        📞 联系 181-5470-3516
+                    </a>
                 </div>
                 <div class="day-shift-item">
                     <div class="day-shift-name">辅助 - 刘强</div>
-                    <a class="day-shift-phone" href="tel:15173632710">151-7363-2710</a>
+                    <a class="day-shift-phone" href="tel:15173632710">
+                        📞 联系 151-7363-2710
+                    </a>
                 </div>
                 <div class="day-shift-item">
                     <div class="day-shift-name">精炼 - 占磊</div>
-                    <a class="day-shift-phone" href="tel:15172036342">151-7203-6342</a>
+                    <a class="day-shift-phone" href="tel:15172036342">
+                        📞 联系 151-7203-6342
+                    </a>
                 </div>
             </div>
         </div>
