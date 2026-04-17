@@ -15,48 +15,50 @@
             font-family: "Microsoft YaHei", Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 12px;
             color: #333;
+            font-size: 13px; /* ✅ 整体字体缩小 */
         }
         
         .container {
             max-width: 100%;
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             margin: 0 auto;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
         }
         
         .header h1 {
             color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 18px;
+            margin-bottom: 6px;
         }
         
         .date-info {
-            font-size: 16px;
+            font-size: 13px;
             color: #666;
             background: #f8f9fa;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 15px 0;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 10px 0;
+            line-height: 1.4;
         }
         
         .week-info {
-            font-size: 16px;
+            font-size: 13px;
             color: #fff;
             background: #e91e63;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 15px 0;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 10px 0;
             text-align: center;
             font-weight: bold;
         }
@@ -64,17 +66,18 @@
         .time-slots {
             display: flex;
             justify-content: space-around;
-            margin: 20px 0;
-            gap: 10px;
+            margin: 12px 0;
+            gap: 6px;
         }
         
         .time-slot {
             flex: 1;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 6px;
+            border-radius: 8px;
             text-align: center;
             color: white;
             font-weight: bold;
+            font-size: 12px;
         }
         
         .morning-slot {
@@ -91,78 +94,78 @@
         
         .main-display {
             display: flex;
-            gap: 20px;
-            margin: 20px 0;
+            gap: 12px;
+            margin: 12px 0;
         }
         
         .current-shift {
             flex: 1;
             background: linear-gradient(135deg, #4CAF50, #2E7D32);
             color: white;
-            border-radius: 15px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 12px;
         }
         
         .next-shift {
             flex: 1;
             background: linear-gradient(135deg, #2196F3, #0D47A1);
             color: white;
-            border-radius: 15px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 12px;
         }
         
         .shift-title {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
         }
         
         .electrician-card {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 10px;
+            margin: 12px 0;
         }
         
         .avatar {
-            width: 60px;
-            height: 60px;
+            width: 44px;
+            height: 44px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 18px;
             font-weight: bold;
         }
         
         .info-details h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
+            font-size: 16px;
+            margin-bottom: 3px;
         }
         
         .team-badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.3);
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            margin-bottom: 5px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-bottom: 3px;
         }
         
         .phone {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
-            margin-top: 5px;
+            margin-top: 3px;
         }
         
         .shift-time {
-            font-size: 14px;
+            font-size: 12px;
             opacity: 0.9;
-            margin-top: 5px;
+            margin-top: 3px;
         }
         
         .contact-btn {
@@ -171,11 +174,11 @@
             background: white;
             color: #4CAF50;
             border: none;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 12px;
             text-decoration: none;
             text-align: center;
             cursor: pointer;
@@ -189,10 +192,56 @@
         .footer-info {
             text-align: center;
             color: #888;
-            font-size: 12px;
-            margin-top: 20px;
-            padding-top: 15px;
+            font-size: 11px;
+            margin-top: 12px;
+            padding-top: 10px;
             border-top: 1px solid #eee;
+        }
+
+        /* ✅ 长白班联系人区域 */
+        .day-shift-section {
+            margin-top: 16px;
+            padding: 12px;
+            background: #f1f3f4;
+            border-radius: 12px;
+            border-left: 4px solid #1976d2;
+        }
+
+        .day-shift-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .day-shift-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .day-shift-item {
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 12px;
+            line-height: 1.4;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .day-shift-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .day-shift-phone {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .day-shift-phone:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 768px) {
@@ -203,29 +252,33 @@
             .time-slots {
                 flex-direction: column;
             }
+
+            .day-shift-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>⚡⚡ 电工倒班管理系统（修正版）</h1>
+            <h1>⚡ 电工倒班管理系统</h1>
             <div class="date-info" id="dateTime">2026年01月25日 星期日<br><span id="currentTime">10:14:36</span></div>
             <div class="week-info" id="weekInfo">第4周 | 当前主导班组: 甲班</div>
         </div>
         
         <div class="time-slots">
-            <div class="time-slot morning-slot">早班 (8:00-16:00)</div>
-            <div class="time-slot middle-slot">中班 (16:00-24:00)</div>
-            <div class="time-slot night-slot">夜班 (0:00-8:00)</div>
+            <div class="time-slot morning-slot">早班 8:00-16:00</div>
+            <div class="time-slot middle-slot">中班 16:00-24:00</div>
+            <div class="time-slot night-slot">夜班 0:00-8:00</div>
         </div>
         
         <div class="main-display">
             <!-- 当前班次 -->
             <div class="current-shift">
                 <div class="shift-title">
-                    <div style="background: white; color: #4CAF50; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">早</div>
-                    早班 值班电工
+                    <div style="background: white; color: #4CAF50; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">早</div>
+                    当前值班电工
                 </div>
                 
                 <div class="electrician-card">
@@ -239,14 +292,14 @@
                 </div>
                 
                 <a href="tel:13737242404" class="contact-btn" id="callBtn">
-                    📞📞 立即联系 朱森发 | (137****2404)
+                    📞 联系 朱森发
                 </a>
             </div>
             
             <!-- 下一班 -->
             <div class="next-shift">
                 <div class="shift-title">
-                    <div style="background: white; color: #2196F3; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">中</div>
+                    <div style="background: white; color: #2196F3; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">中</div>
                     下一班: 中班
                 </div>
                 
@@ -256,33 +309,61 @@
                         <h3 id="nextName">连二宁</h3>
                         <div class="team-badge" id="nextTeam">乙班</div>
                         <div class="phone" id="nextPhone">186-3366-8513</div>
-                        <div class="shift-time">接班时间: 16:00开始</div>
+                        <div class="shift-time">接班时间: 16:00</div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ 长白班各区域联系人（常驻） -->
+        <div class="day-shift-section">
+            <div class="day-shift-title">📋 长白班各区域联系人（常驻）</div>
+            <div class="day-shift-list">
+                <div class="day-shift-item">
+                    <div class="day-shift-name">转炉 - 李佳桀</div>
+                    <a class="day-shift-phone" href="tel:18077097795">180-7709-7795</a>
+                </div>
+                <div class="day-shift-item">
+                    <div class="day-shift-name">连铸 - 曾元峰</div>
+                    <a class="day-shift-phone" href="tel:13317703415">133-1770-3415</a>
+                </div>
+                <div class="day-shift-item">
+                    <div class="day-shift-name">行车 - 黄琪超</div>
+                    <a class="day-shift-phone" href="tel:19907704304">199-0770-4304</a>
+                </div>
+                <div class="day-shift-item">
+                    <div class="day-shift-name">运转 - 巫绍伟</div>
+                    <a class="day-shift-phone" href="tel:18154703516">181-5470-3516</a>
+                </div>
+                <div class="day-shift-item">
+                    <div class="day-shift-name">辅助 - 刘强</div>
+                    <a class="day-shift-phone" href="tel:15173632710">151-7363-2710</a>
+                </div>
+                <div class="day-shift-item">
+                    <div class="day-shift-name">精炼 - 占磊</div>
+                    <a class="day-shift-phone" href="tel:15172036342">151-7203-6342</a>
                 </div>
             </div>
         </div>
         
         <div class="footer-info">
-            ⏰⏰⏰ 系统实时更新 | 最后更新: <span id="lastUpdate">10:14:36</span> | 下次轮换: <span id="nextRotation">2026年2月2日 (周一)</span>
+            ⏰ 系统实时更新 | 最后更新: <span id="lastUpdate">10:14:36</span> | 下次轮换: <span id="nextRotation">2026年2月2日 (周一)</span>
         </div>
     </div>
 
     <script>
-        // 电工信息配置 - 按照甲班、乙班、丙班顺序排列
         const electricians = [
             { team: "甲班", name: "朱森发", phone: "13737242404", avatar: "朱" },
             { team: "乙班", name: "连二宁", phone: "18633668513", avatar: "连" },
             { team: "丙班", name: "张有川", phone: "15987296857", avatar: "张" }
         ];
 
-        // 班次时间配置
         const shiftTimes = {
             morning: { name: "早班", start: 8, end: 16, color: "#4CAF50" },
             middle: { name: "中班", start: 16, end: 24, color: "#2196F3" },
             night: { name: "夜班", start: 0, end: 8, color: "#FF9800" }
         };
 
-        // 格式化电话
         function formatPhone(phone) {
             if (phone.length === 11) {
                 return phone.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
@@ -290,177 +371,119 @@
             return phone;
         }
 
-        // 获取隐藏电话号码
-        function getHiddenPhone(phone) {
-            if (phone.length === 11) {
-                return phone.substring(0, 3) + '****' + phone.substring(7);
-            }
-            return phone;
-        }
-
-        // 获取当前周数（ISO周数）
         function getWeekNumber(date) {
             const d = new Date(date);
             d.setHours(0, 0, 0, 0);
             d.setDate(d.getDate() + 4 - (d.getDay() || 7));
             const yearStart = new Date(d.getFullYear(), 0, 1);
-            const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-            return weekNo;
+            return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
         }
 
-        // 根据日期确定当前主导班组
         function getCurrentRotation(now) {
-            // 基准日期：2026年1月25日 第4周 主导班组为甲班
             const baseDate = new Date('2026-01-25');
-            const baseWeek = 4; // 第4周
-            const baseRotation = 0; // 甲班在数组索引0
-            
-            // 计算当前周数
+            const baseWeek = 4;
+            const baseRotation = 0;
+
             const currentWeek = getWeekNumber(now);
-            
-            // 计算周数差
             const weekDiff = currentWeek - baseWeek;
-            
-            // 每周轮换一次，返回当前主导班组的索引
+
             return (baseRotation + weekDiff) % 3;
         }
 
-        // 根据主导班组和当前时间确定班次分配
         function getCurrentShiftInfo(rotationIndex, currentHour) {
-            // 主导班组对应早班
-            // 下一个班组对应中班
-            // 第三个班组对应夜班
-            
             if (currentHour >= 8 && currentHour < 16) {
-                // 当前是早班 (8:00-16:00)
                 return {
                     currentShift: "morning",
-                    currentIndex: rotationIndex, // 主导班组上早班
+                    currentIndex: rotationIndex,
                     nextShift: "middle",
-                    nextIndex: (rotationIndex + 1) % 3 // 下一个班组上中班
+                    nextIndex: (rotationIndex + 1) % 3
                 };
             } else if (currentHour >= 16 && currentHour < 24) {
-                // 当前是中班 (16:00-24:00)
                 return {
                     currentShift: "middle",
-                    currentIndex: (rotationIndex + 1) % 3, // 下一个班组上中班
+                    currentIndex: (rotationIndex + 1) % 3,
                     nextShift: "night",
-                    nextIndex: (rotationIndex + 2) % 3 // 第三个班组上夜班
+                    nextIndex: (rotationIndex + 2) % 3
                 };
             } else {
-                // 当前是夜班 (0:00-8:00)
                 return {
                     currentShift: "night",
-                    currentIndex: (rotationIndex + 2) % 3, // 第三个班组上夜班
+                    currentIndex: (rotationIndex + 2) % 3,
                     nextShift: "morning",
-                    nextIndex: rotationIndex // 主导班组上早班
+                    nextIndex: rotationIndex
                 };
             }
         }
 
-        // 更新显示
         function updateDisplay() {
             const now = new Date();
             const currentHour = now.getHours();
             const weekNumber = getWeekNumber(now);
             const rotationIndex = getCurrentRotation(now);
-            
-            // 获取班次信息
+
             const shiftInfo = getCurrentShiftInfo(rotationIndex, currentHour);
-            
-            // 更新时间显示
+
             const dateStr = now.toLocaleDateString('zh-CN', { 
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                weekday: 'long'
+                year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'long'
             });
-            
-            const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
-            
+            const timeStr = now.toTimeString().split(' ')[0];
+
             document.getElementById('dateTime').innerHTML = `
                 ${dateStr}<br>
-                <span id="currentTime" style="font-size: 20px; font-weight: bold;">${timeStr}</span>
+                <span id="currentTime" style="font-size: 16px; font-weight: bold;">${timeStr}</span>
             `;
-            
-            // 更新周信息
+
             document.getElementById('weekInfo').textContent = `第${weekNumber}周 | 当前主导班组: ${electricians[rotationIndex].team}`;
-            
-            // 更新当前班次信息
+
             const currentElectrician = electricians[shiftInfo.currentIndex];
             const currentShift = shiftTimes[shiftInfo.currentShift];
-            
-            // 更新当前班次样式
             const currentShiftDiv = document.querySelector('.current-shift');
             const currentShiftTitle = document.querySelector('.current-shift .shift-title');
-            
+
             if (shiftInfo.currentShift === "morning") {
                 currentShiftDiv.style.background = "linear-gradient(135deg, #4CAF50, #2E7D32)";
-                currentShiftTitle.innerHTML = `
-                    <div style="background: white; color: #4CAF50; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">早</div>
-                    早班 值班电工
-                `;
+                currentShiftTitle.innerHTML = `<div style="background:white;color:#4CAF50;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;">早</div> 当前值班电工`;
             } else if (shiftInfo.currentShift === "middle") {
                 currentShiftDiv.style.background = "linear-gradient(135deg, #2196F3, #0D47A1)";
-                currentShiftTitle.innerHTML = `
-                    <div style="background: white; color: #2196F3; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">中</div>
-                    中班 值班电工
-                `;
+                currentShiftTitle.innerHTML = `<div style="background:white;color:#2196F3;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;">中</div> 当前值班电工`;
             } else {
                 currentShiftDiv.style.background = "linear-gradient(135deg, #FF9800, #EF6C00)";
-                currentShiftTitle.innerHTML = `
-                    <div style="background: white; color: #FF9800; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">夜</div>
-                    夜班 值班电工
-                `;
+                currentShiftTitle.innerHTML = `<div style="background:white;color:#FF9800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;">夜</div> 当前值班电工`;
             }
-            
+
             document.getElementById('currentName').textContent = currentElectrician.name;
             document.getElementById('currentTeam').textContent = currentElectrician.team;
             document.getElementById('currentPhone').textContent = formatPhone(currentElectrician.phone);
             document.getElementById('currentAvatar').textContent = currentElectrician.avatar;
-            
-            // 更新下一班信息
+
             const nextElectrician = electricians[shiftInfo.nextIndex];
             const nextShift = shiftTimes[shiftInfo.nextShift];
-            
-            // 更新下一班样式
             const nextShiftDiv = document.querySelector('.next-shift');
             const nextShiftTitle = document.querySelector('.next-shift .shift-title');
-            
+
             if (shiftInfo.nextShift === "morning") {
                 nextShiftDiv.style.background = "linear-gradient(135deg, #4CAF50, #2E7D32)";
-                nextShiftTitle.innerHTML = `
-                    <div style="background: white; color: #4CAF50; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">早</div>
-                    下一班: 早班
-                `;
+                nextShiftTitle.innerHTML = `<div style="background:white;color:#4CAF50;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;">早</div> 下一班: 早班`;
             } else if (shiftInfo.nextShift === "middle") {
                 nextShiftDiv.style.background = "linear-gradient(135deg, #2196F3, #0D47A1)";
-                nextShiftTitle.innerHTML = `
-                    <div style="background: white; color: #2196F3; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">中</div>
-                    下一班: 中班
-                `;
+                nextShiftTitle.innerHTML = `<div style="background:white;color:#2196F3;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;">中</div> 下一班: 中班`;
             } else {
                 nextShiftDiv.style.background = "linear-gradient(135deg, #FF9800, #EF6C00)";
-                nextShiftTitle.innerHTML = `
-                    <div style="background: white; color: #FF9800; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">夜</div>
-                    下一班: 夜班
-                `;
+                nextShiftTitle.innerHTML = `<div style="background:white;color:#FF9800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;">夜</div> 下一班: 夜班`;
             }
-            
+
             document.getElementById('nextName').textContent = nextElectrician.name;
             document.getElementById('nextTeam').textContent = nextElectrician.team;
             document.getElementById('nextPhone').textContent = formatPhone(nextElectrician.phone);
             document.getElementById('nextAvatar').textContent = nextElectrician.avatar;
-            
-            // 更新拨号链接
+
             const callBtn = document.getElementById('callBtn');
             callBtn.href = `tel:${currentElectrician.phone}`;
-            callBtn.textContent = `📞📞 立即联系 ${currentElectrician.name} | (${getHiddenPhone(currentElectrician.phone)})`;
-            
-            // 更新班次时间显示
+            callBtn.textContent = `📞 联系 ${currentElectrician.name}`;
+
             const currentShiftTime = document.querySelector('.current-shift .shift-time');
             const nextShiftTime = document.querySelector('.next-shift .shift-time');
-            
+
             if (shiftInfo.currentShift === "morning") {
                 currentShiftTime.textContent = "值班时间: 8:00-16:00";
             } else if (shiftInfo.currentShift === "middle") {
@@ -468,41 +491,33 @@
             } else {
                 currentShiftTime.textContent = "值班时间: 0:00-8:00";
             }
-            
+
             if (shiftInfo.nextShift === "morning") {
-                nextShiftTime.textContent = "接班时间: 8:00开始";
+                nextShiftTime.textContent = "接班时间: 8:00";
             } else if (shiftInfo.nextShift === "middle") {
-                nextShiftTime.textContent = "接班时间: 16:00开始";
+                nextShiftTime.textContent = "接班时间: 16:00";
             } else {
-                nextShiftTime.textContent = "接班时间: 0:00开始";
+                nextShiftTime.textContent = "接班时间: 0:00";
             }
-            
-            // 计算下次轮换时间（下周一）
+
             const nextMonday = new Date(now);
             const daysUntilMonday = (1 + 7 - now.getDay()) % 7;
             nextMonday.setDate(now.getDate() + (daysUntilMonday === 0 ? 7 : daysUntilMonday));
             nextMonday.setHours(0, 0, 0, 0);
-            
+
             const nextRotationStr = nextMonday.toLocaleDateString('zh-CN', { 
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                weekday: 'long'
+                year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'long'
             });
-            
-            // 更新最后刷新时间和下次轮换时间
+
             document.getElementById('lastUpdate').textContent = timeStr;
             document.getElementById('nextRotation').textContent = nextRotationStr;
         }
 
-        // 页面加载时初始化
         window.addEventListener('DOMContentLoaded', () => {
             updateDisplay();
-            // 每秒更新一次
             setInterval(updateDisplay, 1000);
         });
 
-        // 禁止右键和F12
         document.addEventListener('contextmenu', (e) => e.preventDefault());
         document.onkeydown = (e) => {
             if (e.key === 'F12') return false;
